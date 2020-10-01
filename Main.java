@@ -1,12 +1,13 @@
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 class Metadata{
     List<Integer> flowIds;
     List<Integer> randomList;
-    Set<Integer> hashSet;
     public Metadata(){
         flowIds = new ArrayList<>();
         randomList = new ArrayList<>();
-        hashSet = new HashSet<>();
+
         for(int i = 0 ; i < 1000; i++){
             flowIds.add(i);
             randomList.add(i);
