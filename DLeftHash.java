@@ -1,7 +1,4 @@
 import java.util.List;
-
-import javax.swing.text.Segment;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -11,7 +8,7 @@ class DLeftHash{
     List<Integer> hashes;
 
     public DLeftHash(){
-        segments = new int[4][250];
+        segments = new int[4][250];  // 4 segment hashtable with 250 entries in each
         hashes = new ArrayList<>();
 
         for(int i = 0 ; i < 250; i++){
@@ -26,12 +23,6 @@ class DLeftHash{
 
         dlh.hashing();
 
-        for(int i = 0 ; i < 4; i++){
-            for(int j = 0 ; j < 250; j++){
-                System.out.print(dlh.segments[i][j]+",");
-            }
-            System.out.println();
-        }
     }
 
     public void hashing(){
