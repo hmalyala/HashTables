@@ -7,7 +7,7 @@ import java.util.Collections;
 public class Cuckoo {
 
     Map<Integer, int[]> flow_hash;  // Map to store each flow-entry with their corresponding hashes
-    List<Integer> randomList;  // Random list to implement hash function
+    List<Integer> randomList;  // List to implement hash function
     int new_index = -1;
 
     public Cuckoo(){

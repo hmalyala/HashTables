@@ -5,7 +5,7 @@ import java.util.Collections;
 class MultiHashTable{
 
     List<Integer> flowIds;  // Total number of flow entries
-    List<Integer> randomList;  // Random list to implement hash function
+    List<Integer> randomList;  // List to implement hash function
 
     public MultiHashTable(){
         flowIds = new ArrayList<>();
