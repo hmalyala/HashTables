@@ -33,10 +33,9 @@ class DLeftHash{
         for(int i = 1 ; i < 1001; i++){
 
             Collections.shuffle(hashes);
-            int index = hashes.get(0);
             
             for(int j = 0; j < 4; j++){                
-                
+                int index = hashes.get(j);
                 if(segments[j][index] == 0){
                     segments[j][index] = i;
                     count++;
