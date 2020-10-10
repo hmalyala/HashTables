@@ -25,7 +25,9 @@ public class Cuckoo {
 
     public void multiHashFunction(){
         int hashTable[] = new int[1000];  // Cuckoo hash-table
+        int count = 0;
 
+        // flow ids starting from 1 to 1000
         for(int i = 1; i < 1001; i++){
             Collections.shuffle(randomList);
             int hashes[] = new int[3];
@@ -36,6 +38,7 @@ public class Cuckoo {
                 if(hashTable[index] == 0 && flag){
                     hashTable[index] = i;
                     flag = false;
+                    count++;
                 }
             }
             flow_hash.put(i,hashes);
@@ -44,6 +47,7 @@ public class Cuckoo {
                     for(int z : hashes){
                         if(hashTable[z] == 0){
                             hashTable[z] = i;
+                            count++;
                             break; 
                         }
                     }
@@ -51,21 +55,16 @@ public class Cuckoo {
             }
         }
 
-        // for(int i : hashTable){
-        //     System.out.print(i+",");
-        // }
-        for(int i : flow_hash.keySet()){
-            System.out.print("[");
-            for(int j : flow_hash.get(i)){
-                System.out.print(j+",");
-            }
-            System.out.print("]");
-            System.out.println();
+        System.out.println("No. of flows in the Cuckoo hash table - "+count);
+        for(int i : hashTable){
+            System.out.print(i+",");
         }
+
     }
 
     public boolean cuckoo_steps(int[] hashes, int[] hashTable, int val, int steps){
-        System.out.println("Here");
+
+        // Number of cuckoo steps - 3 in this case
         if(steps == 2){
             return false;
         }
